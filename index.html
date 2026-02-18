@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NicaHub – Biblioteca Educativa</title>
+
+<!-- ICONOS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- TAILWIND -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-blue-50 min-h-screen">
+
+<!-- ================= HEADER ================= -->
+<header class="bg-blue-600 text-white py-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-4">
+
+        <h1 class="text-2xl font-bold flex items-center">
+            <span class="material-icons mr-2">school</span>
+            NicaHub
+        </h1>
+
+        <div class="text-sm font-semibold">
+            Biblioteca educativa abierta
+        </div>
+
+    </div>
+</header>
+
+<!-- ================= MENU ================= -->
+<nav class="bg-blue-100 py-4 shadow-md sticky top-0 z-10">
+    <div class="container mx-auto px-4">
+
+        <ul class="flex justify-around items-center">
+
+            <!-- JUEGOS -->
+            <li>
+                <a href="games/index.html"
+                   class="flex justify-center items-center text-blue-600 hover:text-blue-800 w-16 h-16">
+                    <span class="material-icons text-3xl">
+                        videogame_asset
+                    </span>
+                </a>
+            </li>
+
+            <!-- BUSCAR -->
+            <li>
+                <a href="buscador.html"
+                   class="flex justify-center items-center text-blue-600 hover:text-blue-800 w-16 h-16">
+                    <span class="material-icons text-3xl">
+                        search
+                    </span>
+                </a>
+            </li>
+
+            <!-- DICTIONARY -->
+            <li>
+                <a href="dictionary.html"
+                   class="flex justify-center items-center text-blue-600 hover:text-blue-800 w-16 h-16">
+                    <span class="material-icons text-3xl">
+                        translate
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container mx-auto mt-8 px-4">
+
+    <section id="posts" class="space-y-4">
+
+        <div class="text-center text-gray-500">
+            Cargando biblioteca educativa...
+        </div>
+
+    </section>
+
+</main>
+
+<!-- ================= SCRIPTS ================= -->
+
+<!-- ✅ LazyLoad REAL -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+
+<!-- ✅ Tu lógica -->
+<script src="js/libros.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // iniciar biblioteca
+    cargarLibros();
+
+});
+</script>
+
+</body>
+</html>
