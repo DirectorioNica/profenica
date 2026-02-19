@@ -1,0 +1,17 @@
+[
+  { "img": "../img/bear.png", "word": "Bear" },
+  { "img": "../img/bird.png", "word": "Bird" },
+  { "img": "../img/cat.png", "word": "Cat" },
+  { "img": "../img/cow.png", "word": "Cow" },
+  { "img": "../img/dog.png", "word": "Dog" },
+  { "img": "../img/duck.png", "word": "Duck" },
+  { "img": "../img/elephant.png", "word": "Elephant" },
+  { "img": "../img/fish.png", "word": "Fish" },
+  { "img": "../img/horse.png", "word": "Horse" },
+  { "img": "../img/lion.png", "word": "Lion" },
+  { "img": "../img/monkey.png", "word": "Monkey" },
+  { "img": "../img/pig.png", "word": "Pig" },
+  { "img": "../img/shark.png", "word": "Shark" },
+  { "img": "../img/tiger.png", "word": "Tiger" },
+  { "img": "../img/turtle.png", "word": "Turtle" }
+]
