@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imprimibles – NicaHub</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-blue-50 min-h-screen">
+
+<!-- HEADER -->
+<header class="bg-blue-600 text-white py-4 text-center shadow-md">
+    <h1 class="text-2xl font-bold flex justify-center items-center">
+        <span class="material-icons mr-2">print</span>
+        Imprimibles Educativos
+    </h1>
+</header>
+
+<main class="container mx-auto px-4 mt-6">
+
+    <!-- ===== FILTROS ===== -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+
+        <button onclick="filtrar('all')" class="btnFiltro bg-blue-600 text-white px-4 py-2 rounded-lg">
+            Todos
+        </button>
+
+        <button onclick="filtrar('dotted_pics')" class="btnFiltro bg-white shadow px-4 py-2 rounded-lg">
+            ✏️ Dotted Pics
+        </button>
+
+        <button onclick="filtrar('counting_pics')" class="btnFiltro bg-white shadow px-4 py-2 rounded-lg">
+            🧩 Color and Count
+        </button>
+
+        <button onclick="filtrar('matching')" class="btnFiltro bg-white shadow px-4 py-2 rounded-lg">
+            🔗 Matching
+        </button>
+
+    </div>
+
+    <!-- GALERIA -->
+    <div id="galeria"
+         class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    </div>
+
+</main>
+
+<script>
+
+let DATA = [];
+
+async function cargarImprimibles(){
+
+    const res = await fetch("data/imprimible.json");
+    DATA = await res.json();
+
+    render(DATA);
+}
+
+function render(lista){
+
+    const galeria = document.getElementById("galeria");
+    galeria.innerHTML = "";
+
+    lista.forEach(item => {
+
+        galeria.innerHTML += `
+        <div class="bg-white rounded-xl shadow-md p-4
+                    flex flex-col justify-between
+                    text-center hover:shadow-xl transition">
+
+            <div>
+                <img src="${item.img}"
+                     class="mx-auto mb-4 max-h-40 object-contain">
+
+                <h3 class="font-bold">${item.word}</h3>
+                <p class="text-sm text-gray-500 mb-4">
+                    ${item.description}
+                </p>
+            </div>
+
+            <button onclick="imprimir('${item.img}')"
+                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Imprimir
+            </button>
+
+        </div>`;
+    });
+}
+
+function filtrar(tipo){
+
+    if(tipo === "all"){
+        render(DATA);
+        return;
+    }
+
+    const filtrado = DATA.filter(item => item.type === tipo);
+    render(filtrado);
+}
+
+function imprimir(src){
+
+    const ventana = window.open("");
+
+    ventana.document.write(`
+        <html>
+        <body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;">
+            <img src="${src}" style="max-width:95%">
+            <script>
+                window.onload=function(){
+                    window.print();
+                    window.onafterprint=()=>window.close();
+                }
+            <\/script>
+        </body>
+        </html>
+    `);
+
+    ventana.document.close();
+}
+
+cargarImprimibles();
+
+</script>
+
+</body>
+</html>
