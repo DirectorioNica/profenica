@@ -4,49 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Imprimibles – TeacherHub</title>
+<title>Imprimibles – NicaHub</title>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ✅ LazyLoad -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+
+<style>
+/* sensación app móvil */
+.card-touch{
+    transition: transform .15s ease;
+}
+.card-touch:active{
+    transform: scale(.96);
+}
+</style>
 
 </head>
 
 <body class="bg-blue-50 min-h-screen">
 
 <!-- HEADER -->
-<header class="bg-blue-600 text-white py-4 text-center shadow-md">
-    <h1 class="text-2xl font-bold flex justify-center items-center">
+<header class="bg-blue-600 text-white py-4 text-center shadow-md sticky top-0 z-10">
+    <h1 class="text-xl md:text-2xl font-bold flex justify-center items-center">
         <span class="material-icons mr-2">print</span>
         Imprimibles Educativos
     </h1>
 </header>
 
-<main class="container mx-auto px-4 mt-6">
+<main class="max-w-6xl mx-auto px-3 md:px-4 mt-5">
 
     <!-- ===== FILTROS ===== -->
-    <div class="flex flex-wrap justify-center gap-3 mb-8">
+    <div class="flex overflow-x-auto gap-3 mb-6 pb-2">
 
-        <button onclick="filtrar('all')" class="btnFiltro bg-blue-600 text-white px-4 py-2 rounded-lg">
+        <button onclick="filtrar('all')" 
+            class="btnFiltro bg-blue-600 text-white px-4 py-2 rounded-full whitespace-nowrap">
             Todos
         </button>
 
-        <button onclick="filtrar('dotted_pics')" class="btnFiltro bg-white shadow px-4 py-2 rounded-lg">
-            ✏️ Dotted Pics
+        <button onclick="filtrar('dotted_pics')" 
+            class="btnFiltro bg-white shadow px-4 py-2 rounded-full whitespace-nowrap">
+            ✏️ Dotted
         </button>
 
-        <button onclick="filtrar('counting_pics')" class="btnFiltro bg-white shadow px-4 py-2 rounded-lg">
-            🧩 Color and Count
+        <button onclick="filtrar('counting_pics')" 
+            class="btnFiltro bg-white shadow px-4 py-2 rounded-full whitespace-nowrap">
+            🧩 Count
         </button>
 
-        <button onclick="filtrar('matching')" class="btnFiltro bg-white shadow px-4 py-2 rounded-lg">
-            🔗 Matching
+        <button onclick="filtrar('mask_activity')" 
+            class="btnFiltro bg-white shadow px-4 py-2 rounded-full whitespace-nowrap">
+            🎭 Crafts
         </button>
 
     </div>
 
     <!-- GALERIA -->
     <div id="galeria"
-         class="grid grid-cols-2 md:grid-cols-4 gap-6">
+         class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
     </div>
 
 </main>
@@ -54,6 +71,7 @@
 <script>
 
 let DATA = [];
+let lazyLoadInstance;
 
 async function cargarImprimibles(){
 
@@ -71,27 +89,39 @@ function render(lista){
     lista.forEach(item => {
 
         galeria.innerHTML += `
-        <div class="bg-white rounded-xl shadow-md p-4
-                    flex flex-col justify-between
-                    text-center hover:shadow-xl transition">
+        <div class="bg-white rounded-2xl shadow-md p-3
+                    flex flex-col justify-between text-center
+                    card-touch">
 
             <div>
-                <img src="${item.img}"
-                     class="mx-auto mb-4 max-h-40 object-contain">
+                <img
+                    data-src="${item.img}"
+                    class="lazy mx-auto mb-3 max-h-36 object-contain"
+                    alt="${item.word}">
 
-                <h3 class="font-bold">${item.word}</h3>
-                <p class="text-sm text-gray-500 mb-4">
+                <h3 class="font-semibold text-sm md:text-base">${item.word}</h3>
+                <p class="text-xs text-gray-500 mb-3">
                     ${item.description}
                 </p>
             </div>
 
             <button onclick="imprimir('${item.img}')"
-                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                class="bg-blue-600 text-white py-2 rounded-xl text-sm
+                       active:scale-95 transition">
                 Imprimir
             </button>
 
         </div>`;
     });
+
+    // ✅ activar lazyload
+    if(lazyLoadInstance){
+        lazyLoadInstance.update();
+    }else{
+        lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+    }
 }
 
 function filtrar(tipo){
@@ -130,6 +160,6 @@ cargarImprimibles();
 
 </script>
 
+<br>
 </body>
-
 </html>

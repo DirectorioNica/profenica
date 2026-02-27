@@ -100,5 +100,23 @@
     "word": "School Supplies",
     "type": "counting_pics",
     "description": "Color and Count School Supplies."
-  }
+  },
+  {
+  "img": "img/m_owl.png",
+  "word": "Owl Mask",
+  "type": "mask_activity",
+  "description": "Cut and assemble the owl mask to create a fun handmade craft."
+},
+{
+  "img": "img/m_elephant.png",
+  "word": "Elephant Mask",
+  "type": "mask_activity",
+  "description": "Cut out the pieces and build an elephant mask as a classroom craft."
+},
+{
+  "img": "img/m_giraffe.png",
+  "word": "Giraffe Mask",
+  "type": "mask_activity",
+  "description": "Cut and assemble the giraffe mask to make a creative craft activity."
+}
 ]
