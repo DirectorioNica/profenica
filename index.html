@@ -22,7 +22,7 @@
 
         <h1 class="text-2xl font-bold flex items-center">
             <span class="material-icons mr-2">school</span>
-            NicaHub
+            TeacherHub
         </h1>
 
         <div class="text-sm font-semibold">
@@ -32,76 +32,94 @@
     </div>
 </header>
 
-<!-- ================= MENU ================= -->
-<nav class="bg-blue-100 py-4 shadow-md sticky top-0 z-10">
-    <div class="container mx-auto px-4">
 
-        <ul class="flex justify-around items-center">
-
-            <!-- JUEGOS -->
-            <li>
-                <a href="games/index.html"
-                   class="flex justify-center items-center text-blue-600 hover:text-blue-800 w-16 h-16">
-                    <span class="material-icons text-3xl">
-                        videogame_asset
-                    </span>
-                </a>
-            </li>
-
-            <!-- BUSCAR -->
-            <li>
-                <a href="buscador.html"
-                   class="flex justify-center items-center text-blue-600 hover:text-blue-800 w-16 h-16">
-                    <span class="material-icons text-3xl">
-                        search
-                    </span>
-                </a>
-            </li>
-
-            <!-- DICTIONARY -->
-            <li>
-                <a href="apps/pictionary.html"
-                   class="flex justify-center items-center text-blue-600 hover:text-blue-800 w-16 h-16">
-                    <span class="material-icons text-3xl">
-                        translate
-                    </span>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-</nav>
 
 <!-- ================= CONTENIDO ================= -->
 <main class="container mx-auto mt-8 px-4">
 
-    <section id="posts" class="space-y-4">
+    <section class="grid grid-cols-2 md:grid-cols-3 gap-6">
 
-        <div class="text-center text-gray-500">
-            Cargando biblioteca educativa...
-        </div>
+        <!-- JUEGOS -->
+        <a href="games/index.html"
+           class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition">
+
+            <span class="material-icons text-5xl text-blue-600">
+                sports_esports
+            </span>
+
+            <h2 class="mt-3 font-bold text-lg">
+                Juegos
+            </h2>
+        </a>
+
+        <!-- PICTIONARY -->
+        <a href="apps/pictionary.html"
+           class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition">
+
+            <span class="material-icons text-5xl text-green-600">
+                translate
+            </span>
+
+            <h2 class="mt-3 font-bold text-lg">
+                Pictionary
+            </h2>
+        </a>
+
+        <!-- BUSCADOR -->
+        <a href="buscador.html"
+           class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition">
+
+            <span class="material-icons text-5xl text-purple-600">
+                search
+            </span>
+
+            <h2 class="mt-3 font-bold text-lg">
+                Buscar Recursos
+            </h2>
+        </a>
+
+        <!-- CROSSWORD -->
+        <a href="apps/crossword.html"
+           class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition">
+
+            <span class="material-icons text-5xl text-orange-600">
+                translate
+            </span>
+
+            <h2 class="mt-3 font-bold text-lg">
+                Crossword
+            </h2>
+        </a>
+
+        <!-- HOJAS DE TRABAJO -->
+        <a href="imprimible.html"
+           class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition">
+
+            <span class="material-icons text-5xl text-red-600">
+                description
+            </span>
+
+            <h2 class="mt-3 font-bold text-lg">
+                Imprimibles
+            </h2>
+        </a>
+
+        <!-- PROXIMAMENTE -->
+        <a href="#"
+           class="bg-white rounded-2xl shadow-md p-6 text-center opacity-70">
+
+            <span class="material-icons text-5xl text-gray-400">
+                extension
+            </span>
+
+            <h2 class="mt-3 font-bold text-lg">
+                Próximamente
+            </h2>
+        </a>
 
     </section>
 
 </main>
-
-<!-- ================= SCRIPTS ================= -->
-
-<!-- ✅ LazyLoad REAL -->
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
-
-<!-- ✅ Tu lógica -->
-<script src="js/libros.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    // iniciar biblioteca
-    cargarLibros();
-
-});
-</script>
 
 </body>
 </html>
