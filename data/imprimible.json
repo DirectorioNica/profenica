@@ -1,102 +1,102 @@
 [
   {
-    "img": "../img/t_apple.png",
+    "img": "img/t_apple.png",
     "word": "Apple",
     "type": "dotted_pics",
     "description": "Trace the dotted lines and color the apple."
   },
   {
-    "img": "../img/t_ball.png",
+    "img": "img/t_ball.png",
     "word": "Ball",
     "type": "dotted_pics",
     "description": "Follow the dotted shape and color the ball."
   },
   {
-    "img": "../img/t_kite.png",
+    "img": "img/t_kite.png",
     "word": "Kite",
     "type": "dotted_pics",
     "description": "Trace and decorate the kite."
   },
   {
-    "img": "../img/t_teddy.png",
+    "img": "img/t_teddy.png",
     "word": "Teddy Bear",
     "type": "dotted_pics",
     "description": "Trace the teddy and color it."
   },
   {
-    "img": "../img/t_doll.png",
+    "img": "img/t_doll.png",
     "word": "Doll",
     "type": "dotted_pics",
     "description": "Practice tracing and coloring the doll."
   },
   {
-    "img": "../img/t_drums.png",
+    "img": "img/t_drums.png",
     "word": "Drums",
     "type": "dotted_pics",
     "description": "Trace the drums and color them."
   },
   {
-    "img": "../img/t_school.png",
+    "img": "img/t_school.png",
     "word": "School",
     "type": "dotted_pics",
     "description": "Trace the school building."
   },
   {
-    "img": "../img/t_mom.png",
+    "img": "img/t_mom.png",
     "word": "Mom",
     "type": "dotted_pics",
     "description": "Trace and color mom."
   },
   {
-    "img": "../img/t_dad.png",
+    "img": "img/t_dad.png",
     "word": "Dad",
     "type": "dotted_pics",
     "description": "Trace and color dad."
   },
   {
-    "img": "../img/t_family.png",
+    "img": "img/t_family.png",
     "word": "Family",
     "type": "dotted_pics",
     "description": "Trace the family picture."
   },
   {
-    "img": "../img/t_grandma.png",
+    "img": "img/t_grandma.png",
     "word": "Grandma",
     "type": "dotted_pics",
     "description": "Trace and color grandma."
   },
   {
-    "img": "../img/t_grandpa.png",
+    "img": "img/t_grandpa.png",
     "word": "Grandpa",
     "type": "dotted_pics",
     "description": "Trace and color grandpa."
   },
   {
-    "img": "../img/t_sisters.png",
+    "img": "img/t_sisters.png",
     "word": "Sisters",
     "type": "dotted_pics",
     "description": "Trace the sisters."
   },
   {
-    "img": "../img/t_scissors.png",
+    "img": "img/t_scissors.png",
     "word": "Scissors",
     "type": "dotted_pics",
     "description": "Trace the scissors carefully."
   },
   {
-    "img": "../img/t_pencil.png",
+    "img": "img/t_pencil.png",
     "word": "Pencil",
     "type": "dotted_pics",
     "description": "Trace and color the pencil."
   },
-   {
-    "img": "../img/c_toys.png",
+  {
+    "img": "img/c_toys.png",
     "word": "Toys",
     "type": "counting_pics",
     "description": "Color and Count Toys."
   },
   {
-    "img": "../img/c_school.png",
+    "img": "img/c_school.png",
     "word": "School Supplies",
     "type": "counting_pics",
     "description": "Color and Count School Supplies."
