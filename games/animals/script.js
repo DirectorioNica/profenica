@@ -59,25 +59,37 @@ function loadQuestion() {
 function checkAnswer(selectedAnswer) {
     const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
+    // buscar el botón que se presionó
+    const selectedButton = [...options].find(
+        btn => btn.textContent === selectedAnswer
+    );
+
     if (selectedAnswer === currentQuestion.correct) {
-        winSound.play(); // Reproducir sonido correcto
+
+        // ✅ respuesta correcta
+        selectedButton.classList.add("correct");
+        winSound.play();
         score += 10;
         currentQuestionIndex++;
 
-        if (currentQuestionIndex < shuffledQuestions.length) {
-            setTimeout(() => {
-                updateUI();
-                loadQuestion();
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                updateUI();
-            }, 1000);
-        }
+        setTimeout(() => {
+            updateUI();
+            resetButtons();
+            loadQuestion();
+        }, 800);
+
     } else {
-        errorSound.play(); // Reproducir sonido de error
+
+        // ❌ respuesta incorrecta (SOLO visual)
+        selectedButton.classList.add("wrong");
+        errorSound.play();
         opportunities--;
         updateUI();
+
+        // quitar rojo después
+        setTimeout(() => {
+            selectedButton.classList.remove("wrong");
+        }, 600);
 
         if (opportunities === 0) {
             setTimeout(() => {
@@ -94,6 +106,13 @@ function checkAnswer(selectedAnswer) {
             }, 1000);
         }
     }
+}
+
+
+function resetButtons() {
+    options.forEach(btn => {
+        btn.classList.remove("wrong", "correct");
+    });
 }
 
 shuffleQuestions();
